@@ -11,8 +11,8 @@ router.get('/redirect', function(req, res, next) {
   const code = req.query.code;
   console.log(`Redirect ${code}`);
   const args = {
-    headers: { "Content-Type": "application/json" },
-    parameters: {
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    data: {
       "client_id" : "CLI123",
       "client_secret" : "P855w0rd",
       "grant_type" : "code",

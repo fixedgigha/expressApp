@@ -13,10 +13,10 @@ router.get('/authorize', function(req, res, next) {
 
 router.post('/token', function(req, res, next) {
   console.log(`POST request ${req}`);
-  const clientId = req.query.client_id;
-  const clientSecret = req.query.client_secret;
-  const grantType = req.query.grant_type;
-  const code = req.query.code;
+  const clientId = req.body.client_id;
+  const clientSecret = req.body.client_secret;
+  const grantType = req.body.grant_type;
+  const code = req.body.code;
 
   console.log(`Token post ${clientId}:${clientSecret} ${grantType} code ${code}`);
   res.json({
