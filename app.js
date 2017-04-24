@@ -5,12 +5,14 @@ import favicon from 'serve-favicon';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import cors  from 'cors';
 
 var index = require('./routes/index');
 var thirdParty = require('./routes/third-party');
 var oauth2 = require('./routes/oauth2');
 
 var app = express();
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

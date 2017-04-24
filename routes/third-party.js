@@ -17,8 +17,7 @@ router.get('/redirect', function(req, res, next) {
     send(`code=${code}`).
     send("redirect_uri=/third-party/redirect").end((err, response) => {
         console.log(JSON.stringify(response.body));
-        res.send(`Access Token ${response.body.access_token}`);
-
+        res.json(response.body);
     });
 });
 
